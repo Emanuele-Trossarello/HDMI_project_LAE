@@ -96,9 +96,9 @@ end
 
 // TMDS encoding, 8b10b
 wire [9:0] TMDS_red, TMDS_green, TMDS_blue;
-TMDS_encoder encoder_R(.clk(clk_base), .VD(red  ), .TMDS(TMDS_red)  , .CD(2'b00)        , .VDE(ScreenArea));
-TMDS_encoder encoder_G(.clk(clk_base), .VD(green), .TMDS(TMDS_green), .CD(2'b00)        , .VDE(ScreenArea));
-TMDS_encoder encoder_B(.clk(clk_base), .VD(blue ), .TMDS(TMDS_blue) , .CD({vSync,hSync}), .VDE(ScreenArea));
+TMDS_encoder encoder_R(.clk(clk_TMDS), .VD(red  ), .TMDS(TMDS_red)  , .CD(2'b00)        , .VDE(ScreenArea));
+TMDS_encoder encoder_G(.clk(clk_TMDS), .VD(green), .TMDS(TMDS_green), .CD(2'b00)        , .VDE(ScreenArea));
+TMDS_encoder encoder_B(.clk(clk_TMDS), .VD(blue ), .TMDS(TMDS_blue) , .CD({vSync,hSync}), .VDE(ScreenArea));
 
 // TMDS_colors to serial output via shift registers
 reg [3:0] TMDS_mod10=0;  // modulus 10 counter
